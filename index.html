@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohil Nakarmi | Music Producer</title>
+    <style>
+        /* Base Styling & Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0c20 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Abstract Instrument Grid Background Overlay */
+        .instrument-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 69, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 69, 0, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Ambient Glows simulating Studio Lights */
+        .studio-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: -1;
+        }
+
+        .studio-glow-2 {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.12) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        /* Layout Structure */
+        header {
+            text-align: center;
+            padding: 100px 20px 60px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 180, 216, 0.6);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #00b4d8;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-left: 4px solid #ff4500;
+            padding-left: 15px;
+            color: #ff4500;
+        }
+
+        /* Genres Tags Grid */
+        .genre-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .genre-tag {
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .genre-tag.special {
+            background: rgba(255, 69, 0, 0.15);
+            border: 1px solid rgba(255, 69, 0, 0.5);
+            color: #ff4500;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
+        }
+
+        .genre-tag:hover {
+            transform: translateY(-3px);
+            background: #00b4d8;
+            color: #1a1a2e;
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+
+        .genre-tag.special:hover {
+            background: #ff4500;
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-method strong {
+            color: #00b4d8;
+            width: 100px;
+        }
+
+        .contact-method a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-method a:hover {
+            color: #ff4500;
+        }
+
+        /* Placeholder Player styling */
+        .player-placeholder {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            color: #888;
+            margin-top: 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Visual Background Components -->
+    <div class="instrument-bg"></div>
+    <div class="studio-glow"></div>
+    <div class="studio-glow-2"></div>
+
+    <header>
+        <h1>Rohil Nakarmi</h1>
+        <p>Music Producer & Sound Designer</p>
+    </header>
+
+    <div class="container">
+
+        <!-- About / Styles Section -->
+        <section id="about">
+            <h2>Sonic Portfolio & Styles</h2>
+            <p>A versatile sound architect shifting seamlessly between heavy modern synthetic tracks and deep, atmospheric, organic soundscapes.</p>
+            
+            <div class="genre-grid">
+                <span class="genre-tag">Hip-Hop / Trap</span>
+                <span class="genre-tag">EDM</span>
+                <span class="genre-tag">Cinematic</span>
+                <span class="genre-tag">Lo-Fi</span>
+                <span class="genre-tag">Pop</span>
+                <span class="genre-tag special">🇳🇵 Newari Cultural Fusion</span>
+            </div>
+        </section>
+
+        <!-- Player Section -->
+        <section id="music">
+            <h2>Latest Releases</h2>
+            <p>Stream recent studio drops, instrumentals, and beat tracks:</p>
+            
+            <div class="player-placeholder">
+                <p>🎵 [SoundCloud, Spotify, or YouTube]</p>
+                <small style="color: #555;">MAHADEVA BHAIRAVA </small>
+            </div>
+        </section>
+
+        <!-- Bookings Section -->
+        <section id="contact">
+            <h2>Work with Me</h2>
+            <p>For exclusive beat licenses, custom scoring, collaborations, and project booking:</p>
+            
+            <div class="contact-method">
+                <strong>Email:</strong> 
+                <a href="mailto:rohilnakarmi789@gmail.com">rohilnakarmi789@gmail.com</a>
+            </div>
+            
+            <div class="contact-method">
+                <strong>Phone:</strong> 
+                <a href="tel:+9779860915906">9860915906</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rohil Nakarmi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
